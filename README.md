@@ -18,10 +18,10 @@ My solution of the final project for &quot;How to win a data science competition
 
 Note: The hyperparameters of each regressor type have been optimized beforehand via grid-search and cross-validation. The latter operations are not shown here for simplicity and to keep the submission fairly small.
 
-**Results:**
-Public LB score is 0.8886 for _stacktrees\_sub1.csv_ (with a slightly worse private LB score; slightly overfitting?) and 0.9126 for _stacktrees\_sub2.csv_ (with a slightly better private LB score). This may place me well into the top 500 of the nearly 9.000 competitors atm.  
+## Results:
+- Public LB score is 0.8886 for _stacktrees\_sub1.csv_ (with a slightly worse private LB score; slightly overfitting?) and 0.9126 for _stacktrees\_sub2.csv_ (with a slightly better private LB score). **This ranks me well into the top 500 of the nearly 9.000 competitors atm**.  
 
-When using _lgbm\_opt\_params\_2\_data\_cleared2.csv_ (LightGBM regression result with some optimized parameters), the public LB score 0.8876 is even a bit better! 
+- When using _lgbm\_opt\_params\_2\_data\_cleared2.csv_ (LightGBM regression result with some optimized parameters, evaluation not included in this archive), the public LB score 0.8876 is even a bit better! 
 
 ## Useful links provided by course
 
