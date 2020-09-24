@@ -1,16 +1,16 @@
 # Coursera_HowToWinAKaggleCompetition-FinalProject
-Final Project on the Coursera Course "How To Win A Kaggle Competition" [How to Win a Data Science Competition: Learn from Top Kagglers](https://www.coursera.org/learn/competitive-data-science)
+Final Project on the Coursera Course "How To Win A Kaggle Competition" (see: [How to Win a Data Science Competition: Learn from Top Kagglers](https://www.coursera.org/learn/competitive-data-science))
 
 
 ## Solution: Tree-based regression prediction solution with bagging and stacking
 
 My solution of the final project for &quot;How to win a data science competition&quot; Coursera course based on the &quot;Predict Future Sales&quot;-dataset from Kaggle consists of a zip file called final\_submission.zip. In this archive you can find:
 
-- two .ipynb files (_ **data\_prep\_final.ipynb** _ and _ **eval\_tree\_final.ipynb** _) for data preparation and regression evaluation, respectively:
-  - _ **data\_prep\_final.ipynb** _ includes exploratory data analysis (EDA), data cleaning and feature engineering. Here the most interesting part is the data aggregation and feature engineering on the lag quantities. Be aware that not all generated features will be used in the end, also because of limited computational resources.
-  - _ **eval\_tree\_final.ipynb** _ includes the train-validation-test splits of the prepared data, the tree-based regressions (random forest and gradient boosted with XGboost, LightGBM and CatBoost; the models are chosen to be different in order to get some benefit from stacking, see below) as well as bagging and stacking. For the latter, the most interesting part is the random stacking selection of zero level regression predictions for the first level metamodel leading to the final second level regression prediction.
+- two .ipynb files (**data\_prep\_final.ipynb** and **eval\_tree\_final.ipynb**) for data preparation and regression evaluation, respectively:
+  - **data\_prep\_final.ipynb** includes exploratory data analysis (EDA), data cleaning and feature engineering. Here the most interesting part is the data aggregation and feature engineering on the lag quantities. Be aware that not all generated features will be used in the end, also because of limited computational resources.
+  - **eval\_tree\_final.ipynb** includes the train-validation-test splits of the prepared data, the tree-based regressions (random forest and gradient boosted with XGboost, LightGBM and CatBoost; the models are chosen to be different in order to get some benefit from stacking, see below) as well as bagging and stacking. For the latter, the most interesting part is the random stacking selection of zero level regression predictions for the first level metamodel leading to the final second level regression prediction.
 - 5 serialized model files as (intermediate) results for convenience and clarity
-  - _data\_prep\_final.pkl_ is the result of _ **data\_prep\_final.ipynb** _ and consists of the final data after the cleaning and feature engineering procedure. This file is the main input for the evaluation notebook _ **eval\_tree\_final.ipynb** _.
+  - _data\_prep\_final.pkl_ is the result of **data\_prep\_final.ipynb** and consists of the final data after the cleaning and feature engineering procedure. This file is the main input for the evaluation notebook **eval\_tree\_final.ipynb**.
   - _trees\_valid\_matrix.csv_ is the prediction result of the zero level tree-based regressors on the validation dataset with bagging of three random seeds each. It serves as the training input of the first level random stacking metamodel.
   - _trees\_test\_matrix.csv_ is the prediction result of the zero level tree-based regressors on the test dataset with bagging of three random seeds each. It serves as the test input of the first level random stacking metamodel.
   - _stacktrees\_sub1.csv_ consists of the final prediction of future sales based on the usage of all predictions in form of columns in _trees\_test\_matrix.csv_. Here, a linear regression of the first level metamodel is used for the final prediction.
