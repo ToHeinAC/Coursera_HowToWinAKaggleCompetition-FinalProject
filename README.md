@@ -18,6 +18,8 @@ My solution of the final project for &quot;How to win a data science competition
 
 Note: The hyperparameters of each regressor type have been optimized beforehand via grid-search and cross-validation. The latter operations are not shown here for simplicity and to keep the submission fairly small.
 
+**Results:**
+Public LB score is 0.8886 for _stacktrees\_sub1.csv_ (with a slightly worse private LB score; slightly overfitting?) and 0.9126 for _stacktrees\_sub2.csv_ (with a slightly better private LB score). This my place me well into the top 1.000 of the nearly 9.000 competitors atm.  
 
 ## Useful links provided by course
 
