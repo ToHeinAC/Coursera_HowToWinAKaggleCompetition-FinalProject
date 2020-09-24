@@ -4,7 +4,7 @@ Final Project on the Coursera Course "How To Win A Kaggle Competition" (see: [Ho
 
 ## Solution: Tree-based regression prediction solution with bagging and stacking
 
-My solution of the final project for &quot;How to win a data science competition&quot; Coursera course based on the &quot;Predict Future Sales&quot;-dataset from Kaggle consists of a zip file called final\_submission.zip. In this archive you can find:
+My solution of the final project for &quot;How to win a data science competition&quot; Coursera course based on the &quot;Predict Future Sales&quot;-dataset from Kaggle consists of the following files:
 
 - two .ipynb files (**data\_prep\_final.ipynb** and **eval\_tree\_final.ipynb**) for data preparation and regression evaluation, respectively:
   - **data\_prep\_final.ipynb** includes exploratory data analysis (EDA), data cleaning and feature engineering. Here the most interesting part is the data aggregation and feature engineering on the lag quantities. Be aware that not all generated features will be used in the end, also because of limited computational resources.
@@ -13,8 +13,8 @@ My solution of the final project for &quot;How to win a data science competition
   - _data\_prep\_final.pkl_ is the result of **data\_prep\_final.ipynb** and consists of the final data after the cleaning and feature engineering procedure. This file is the main input for the evaluation notebook **eval\_tree\_final.ipynb**. Here in this archive it is not included due to file size issues, but can be produced within a few minutes.
   - _trees\_valid\_matrix.csv_ is the prediction result of the zero level tree-based regressors on the validation dataset with bagging of three random seeds each. It serves as the training input of the first level random stacking metamodel.
   - _trees\_test\_matrix.csv_ is the prediction result of the zero level tree-based regressors on the test dataset with bagging of three random seeds each. It serves as the test input of the first level random stacking metamodel.
-  - _stacktrees\_sub1.csv_ consists of the final prediction of future sales based on the usage of all predictions in form of columns in _trees\_test\_matrix.csv_. Here, a linear regression of the first level metamodel is used for the final prediction.
-  - _stacktrees\_sub2.csv_ consists of the final prediction of future sales based on the usage of some predictions in form of randomly chosen columns in _trees\_test\_matrix.csv_. Here, a gradient boosted decision tree regression is used for the final prediction. The final prediction is chosen to be the final prediction of the best model (based on validation rsme) of 1.000 random inputs of the first level metamodel.
+  - _stacktrees\_sub1.csv_ (in _stacktrees\_sub1.zip_ for file size issues) consists of the final prediction of future sales based on the usage of all predictions in form of columns in _trees\_test\_matrix.csv_. Here, a linear regression of the first level metamodel is used for the final prediction.
+  - _stacktrees\_sub2.csv_ (in _stacktrees\_sub1.zip_ for file size issues) consists of the final prediction of future sales based on the usage of some predictions in form of randomly chosen columns in _trees\_test\_matrix.csv_. Here, a gradient boosted decision tree regression is used for the final prediction. The final prediction is chosen to be the final prediction of the best model (based on validation rsme) of 1.000 random inputs of the first level metamodel.
 
 Note: The hyperparameters of each regressor type have been optimized beforehand via grid-search and cross-validation. The latter operations are not shown here for simplicity and to keep the submission fairly small.
 
